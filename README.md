@@ -34,8 +34,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # Mood-nextjs-ai
 
+# Database layer
+Pscale db and Prisma orm working together
 
-# Pscale
+## Pscale
 brew install planetscale/tap/pscale
 pscale auth login
 pscale branch create mood dev
@@ -43,7 +45,11 @@ pscale branch create mood dev
 pscale connect mood dev --port 3309 
 (connects to db branch port (3309 default MySql))
 
-# Prisma
+## Prisma
 npm install @prisma/client
 npm install prisma --save-dev
 npx prisma init
+npx prisma db push
+(loads env variable from .env, loads schema from schema.prisma, syncs, generates sdk automatically that matches )
+npx prisma format 
+(cleans it up)

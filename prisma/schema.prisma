@@ -10,3 +10,53 @@ datasource db {
   url      = env("DATABASE_URL")
   relationMode = "prisma"
 }
+
+model User {
+  // name, type, default id assignment Universal Unique Identifier
+  // @things map to Prisma charted db functionalities 
+  // (https://www.prisma.io/docs/concepts/components/prisma-schema/names-in-underlying-database)
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clerkId String @unique
+  email String @unique
+  entries JournalEntry[]
+}
+
+model JournalEntry {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  //relationships make sure relational match type
+  userId String
+  //fields references the self.Model, and the references will look for the Type declared on this line
+  user User @relation(fields: [userId], references: [id])
+
+  //Mysql is fixed-width, so @db.Text sets to max String 
+  content String @db.Text
+
+  //
+  analysis Analysis?
+
+  //function takes an array, indexes the userId
+  @@index([userId])
+}
+
+model Analysis {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  entryId String
+  entry JournalEntry @relation(fields: [entryId], references: [id])
+
+  mood String
+  summary String @db.Text
+  color String
+  negative Boolean
+
+  //one-to-one must be unique
+  @@unique([entryId])
+}
