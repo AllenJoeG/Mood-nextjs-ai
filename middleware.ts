@@ -7,7 +7,7 @@ export default authMiddleware({
   publicRoutes: ['/'],
 })
 
-//Regex 
+//Regex that only allows specific pieces to run
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
