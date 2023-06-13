@@ -1,6 +1,7 @@
 import { getUserByClerkID } from "@/utils/auth"
 import { prisma } from "@/utils/db"
-
+import EntryCard from '@/components/EntryCard'
+import NewEntryCard from '@/components/NewEntryCard'
 
 //This page will fetch all journals by date, organizing them, and contain new journal button & functionality
 
@@ -20,11 +21,16 @@ const getEntries = async () => {
 
 const JournalPage = async () => {
   const entries = await getEntries()
-  console.log('entries ', entries)
 
   return(
     <div>
-      journal goes here
+      <h2 className='text-3xl mb-8'>Journal</h2>
+      <div className='grid grid-cols-3 gap-4'>
+        <NewEntryCard />
+        {entries.map((entry) => (
+          <EntryCard key={entry.id} entry={entry} />
+        ))}
+      </div>
     </div>
   )
 }
