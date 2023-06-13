@@ -2,6 +2,7 @@ import { getUserByClerkID } from "@/utils/auth"
 import { prisma } from "@/utils/db"
 import EntryCard from '@/components/EntryCard'
 import NewEntryCard from '@/components/NewEntryCard'
+import Link from "next/link"
 
 //This page will fetch all journals by date, organizing them, and contain new journal button & functionality
 
@@ -28,7 +29,9 @@ const JournalPage = async () => {
       <div className='grid grid-cols-3 gap-4'>
         <NewEntryCard />
         {entries.map((entry) => (
-          <EntryCard key={entry.id} entry={entry} />
+          <Link href={`/journal/${entry.id}`} key={entry.id}>
+            <EntryCard key={entry.id} entry={entry} />
+          </Link>
         ))}
       </div>
     </div>
