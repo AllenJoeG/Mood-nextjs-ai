@@ -53,3 +53,5 @@ npx prisma db push
 (loads env variable from .env, loads schema from schema.prisma, syncs, generates sdk automatically that matches )
 npx prisma format 
 (cleans it up)
+npx prisma studio
+(opens database app on localhost 5555)
