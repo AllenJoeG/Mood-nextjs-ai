@@ -41,7 +41,7 @@ model JournalEntry {
   analysis Analysis?
 
   //function takes an array, indexes the userId
-  @@index([userId])
+  @@unique([userId, id])
 }
 
 model Analysis {
