@@ -45,7 +45,7 @@ export const analyze = async (content) => {
   console.log(result)
 }
 
-//Testing openai
+// Rudimentary prompt engineering. Compare to zod's prepared that is logged on L33.
   // await analyze(`I'm going to give you a journal entry, I want you to analyze for a few things. I need the mood, 
   //   a summary, the subject of the entry, and a color representing the mood. You need to respond back with formatted 
   //   JSON like this: {"mood": "", "subject": "", "color": "", "negative": ""}.
