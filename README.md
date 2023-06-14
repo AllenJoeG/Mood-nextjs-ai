@@ -76,3 +76,4 @@ npm install recharts
 ## Testing
 npm install @testing-library/jest-dom @testing-library/react vitest @vitejs/plugin-react-swc jsdom
 grab from repo: vite.config.ts, tsconfig.node.json, 
+# mood-nextjs-ai-deploy
