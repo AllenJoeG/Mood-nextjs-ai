@@ -30,7 +30,7 @@ const getPrompt = async (content) => {
     entry: content
   })
 
-  console.log(input)
+  // console.log(input)
   return input
 }
 
@@ -42,7 +42,13 @@ export const analyze = async (content) => {
 
   const result = await model.call(input)
 
-  console.log(result)
+  try {
+    return parser.parse(result)
+  } catch(e) {
+    console.log("Error parsing the zod parse, ", e)
+  }
+
+  // console.log(result)
 }
 
 // Rudimentary prompt engineering. Compare to zod's prepared that is logged on L33.

@@ -56,6 +56,7 @@ model Analysis {
   summary String @db.Text
   color String
   negative Boolean
+  subject String
 
   //one-to-one must be unique
   @@unique([entryId])

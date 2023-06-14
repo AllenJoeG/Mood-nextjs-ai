@@ -19,7 +19,10 @@ const getEntries = async () => {
   })
 
   //Testing openai
-  await analyze(`What a wild time to be alive! Did I make a mistake in my code? probably. It's okay! I'm planting trees.`)
+  // console.log(
+  //   await analyze(`What a wild time to be alive! Did I make a mistake in my code? probably. It's okay! I'm planting trees.`)
+  // )
+  
 
   return entries
 }
