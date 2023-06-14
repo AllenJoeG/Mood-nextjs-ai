@@ -2,7 +2,7 @@
 
 import { useAutosave } from 'react-autosave'
 import { useState } from "react"
-import { updatedEntry } from '@/utils/api'
+import { updateEntry } from '@/utils/api'
 
 // (_value grabs the most up to date state that maybe hasn't been swept up in react under the hood)
 const Editor = ({entry}) => {
@@ -22,7 +22,7 @@ const Editor = ({entry}) => {
     data: value,
     onSave: async (_value) => {
       setIsLoading(true)
-      const data = await updatedEntry(entry.id, _value)
+      const data = await updateEntry(entry.id, _value)
       setAnalysis(data.analysis)
       setIsLoading(false)
     },

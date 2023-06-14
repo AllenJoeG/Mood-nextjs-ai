@@ -12,7 +12,7 @@ export const POST = async () => {
   const entry = await prisma.journalEntry.create({
     data: {
       userId: user.id,
-      content: 'hardcoded journal deets',
+      content: 'hardcoded journal deets to start',
     },
   })
 
@@ -27,7 +27,6 @@ export const POST = async () => {
     })
 
   // Revalidates/hydrates the path and refreshes new stuff when cards changes
-  revalidatePath('/journal')
   
   return NextResponse.json({data: entry})
   
