@@ -55,3 +55,8 @@ npx prisma format
 (cleans it up)
 npx prisma studio
 (opens database app on localhost 5555)
+
+
+## react-autosave
+npm install react-autosave
+
