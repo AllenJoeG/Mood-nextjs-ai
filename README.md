@@ -60,3 +60,8 @@ npx prisma studio
 ## react-autosave
 npm install react-autosave
 
+## LLM, GPT
+
+## langchain.js
+Python and Javascript versions
+npm install langchain
