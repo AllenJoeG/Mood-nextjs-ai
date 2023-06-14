@@ -35,7 +35,7 @@ const JournalPage = async () => {
   return(
     <div>
       <h2 className='text-3xl mb-8'>Journal</h2>
-      <div>
+      <div className="">
         <Question />
       </div>
 
