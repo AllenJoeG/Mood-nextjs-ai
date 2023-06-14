@@ -4,6 +4,7 @@ import EntryCard from '@/components/EntryCard'
 import NewEntryCard from '@/components/NewEntryCard'
 import Link from "next/link"
 import { analyze } from "@/utils/ai"
+import Question from '@/components/Question'
 
 //This page will fetch all journals by date, organizing them, and contain new journal button & functionality
 
@@ -16,6 +17,7 @@ const getEntries = async () => {
     orderBy: {
       createdAt: 'desc',
     },
+    
   })
 
   //Testing openai
@@ -33,6 +35,10 @@ const JournalPage = async () => {
   return(
     <div>
       <h2 className='text-3xl mb-8'>Journal</h2>
+      <div>
+        <Question />
+      </div>
+
       <div className='grid grid-cols-3 gap-4'>
         <NewEntryCard />
         {entries.map((entry) => (
