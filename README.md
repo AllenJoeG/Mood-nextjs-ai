@@ -65,3 +65,7 @@ npm install react-autosave
 ## langchain.js
 Python and Javascript versions
 npm install langchain
+
+## zod
+npm i zod
+(schema library)
