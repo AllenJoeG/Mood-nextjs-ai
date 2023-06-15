@@ -16,12 +16,15 @@ export default async function Home() {
     <div className="w-screen h-screen bg-black flex justify-center items-center text-white">
       {/* square brackets tells Tailwind to use a custom value. mx-auto sets margins centered */}
       <div className="w-full max-w-[600px] mx-auto">
-        <h1 className="text-6xl mb-4">Incredible journal. Stick around.</h1>
+        <h1 className="text-6xl mb-4"> mood</h1>
         {/* text size, text color opacity */}
-        <p className="text=2xl text-white/70 mb-4"> Use this app to track your daily experiences and let Chat GPT read your diary. Be authentic. Honest.</p>
+        <p className="text=2xl text-white/70 mb-4"> Feed text entries to OpenAI for analysis.</p>
+        <p className="text=2xl text-white/70 mb-4"> Query OpenAI about the content you aggregate.</p>
+        <p className="text=2xl text-white/70 mb-4"> Review historical data filtered through semantic vector maps.</p>
+        <p className="text=2xl text-white/70 mb-4"> Who's the computer here?</p>
         <div>
           <Link href={href}>
-            <button className="bg-blue-600 px-4 py-2 rounded-lg text-xl">get started</button>
+            <button className="bg-blue-600 px-4 py-2 rounded-lg text-xl">mood</button>
           </Link>
         </div>
       </div>
