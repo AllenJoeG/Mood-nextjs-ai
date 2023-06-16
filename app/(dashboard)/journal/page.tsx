@@ -17,17 +17,18 @@ const getEntries = async () => {
     orderBy: {
       createdAt: 'desc',
     },
-    
   })
-
-  //Testing openai
-  // console.log(
-  //   await analyze(`What a wild time to be alive! Did I make a mistake in my code? probably. It's okay! I'm planting trees.`)
-  // )
-  
-
   return entries
 }
+
+// const analyses = await prisma.analysis.findMany({
+//   where: {
+//     userId: user.id,
+//   },
+//   orderBy: {
+//     createdAt: 'asc'
+//   },
+// })
 
 const JournalPage = async () => {
   const entries = await getEntries()
@@ -39,7 +40,7 @@ const JournalPage = async () => {
         <Question />
       </div>
 
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='pl-4 pr-4 grid grid-cols-4 gap-4'>
         <NewEntryCard />
         {entries.map((entry) => (
           <Link href={`/journal/${entry.id}`} key={entry.id}>
