@@ -1,11 +1,14 @@
 'use client'
 
 import { useAutosave } from 'react-autosave'
-import { useState } from "react"
+import { useState } from 'react'
 import { updateEntry } from '@/utils/api'
+import Spinner from './Spinner'
+import { useRouter } from 'next/navigation'
 
 // (_value grabs the most up to date state that maybe hasn't been swept up in react under the hood)
 const Editor = ({entry}) => {
+  //Declare State
     const [value, setValue] = useState(entry.content)
     const [isLoading, setIsLoading] = useState(false)
     const [analysis, setAnalysis] = useState(entry.analysis)
@@ -29,9 +32,16 @@ const Editor = ({entry}) => {
   })
 
     return (
-      <div className="w-full h-full grid grid-cols-3">
+      <div className="w-full h-full grid grid-cols-3 gap-0 relative">
+        <div className="absolute left-0 top-0 p-2">
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <div className="w-[16px] h-[16px] rounded-full bg-green-500"></div>
+          )}
+        </div>
+        
         <div className="col-span-2">
-          {isLoading && <div>...loading</div>}
           <textarea
             className="w-full h-full p-8 text-xl outline-none"
             value={value}
