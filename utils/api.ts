@@ -3,6 +3,20 @@ const createURL = (path) => {
   return window.location.origin + path
 }
 
+export const deleteEntry = async (id) => {
+  const res = await fetch(
+    new Request(createURL(`/api/journal/${id}`), {
+      method: 'DELETE',
+    })
+  )
+
+  if (res.ok) {
+    return res.json()
+  } else {
+    throw new Error('Something went wrong on API server!')
+  }
+}
+
 export const updateEntry = async (id, content) => {
   const res = await fetch(new Request(createURL(`/api/journal/${id}`), {
     method: 'PATCH',
