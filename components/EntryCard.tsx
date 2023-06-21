@@ -5,8 +5,9 @@ const EntryCard = ({ entry }) => {
   const date = new Date(entry.createdAt).toDateString()
   const [analysis, setAnalysis] = useState(entry.analysis)
 
-  console.log("EntryCard looking at entry: ", entry)
-    // const { mood, summary, subject, color, negative } = analysis
+  // console.log("EntryCard looking at entry: ", entry)
+  
+  // const { mood, summary, subject, color, negative } = analysis
   // const analysisData = [
   //   {name: 'Summary', value: summary},
   //   {name: 'Subject', value: subject},
@@ -20,7 +21,7 @@ const EntryCard = ({ entry }) => {
       <div className="px-4 py-5 sm:p-6">
         <p>{entry.analysis.summary}</p>
       </div>
-      <div className="px-4 py-4 sm:px-6">
+      <div className="px-4 py-4 sm:px-6" style={{ backgroundColor: entry.analysis.color }}>
         <p>{entry.analysis.mood}</p>
       </div>
     </div>
