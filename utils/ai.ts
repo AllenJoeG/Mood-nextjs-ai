@@ -77,7 +77,6 @@ export const qa = async (question, entries) => {
   })
 
   return res.output_text
-
 }
 
 //
