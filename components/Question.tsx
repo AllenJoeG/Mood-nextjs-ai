@@ -14,12 +14,12 @@ const Question = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
     setLoading(true)
-    const answer = await askQuestion(value)
+
+    const { answer } = await askQuestion(value)
     setResponse(answer)
-    setValue('')
     setLoading(false)
+    setValue('')
   }
 
   return (
@@ -33,10 +33,17 @@ const Question = () => {
           type="text" 
           placeholder="Ask a question" 
         />
-        <button disabled={loading} type="submit" className="bg-blue-400 px-4 py-2 rounded-lg text-lg"> Ask </button>
+        <button 
+          className="bg-blue-400 px-4 py-2 rounded-lg text-lg"
+          disabled={loading} 
+          type="submit" 
+        > 
+          Ask 
+        </button>
+      
       </form>
-      {loading && <div>..l.o.a.d.i.n.g...</div>}
-      {response && <div>{response}</div>}
+      {loading && <p>..l.o.a.d.i.n.g...</p>}
+      {response && <p className="my-4 text-xl">{response}</p>}
     </div>
   )
 }

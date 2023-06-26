@@ -64,7 +64,6 @@ export const qa = async (question, entries) => {
   })
 
   //Hang onto the this chain of methods for future reference it's super powerful langchain implementations
-
   const model = new OpenAI({ temperature: 0, modelName: 'gpt-3.5-turbo' })
   const chain = loadQARefineChain(model)
 
@@ -86,7 +85,7 @@ export const qa = async (question, entries) => {
 
 //
 //
-// Rudimentary prompt engineering. Compare to zod's prepared that is logged on L33.
+// Rudimentary prompt engineering.
   // await analyze(`I'm going to give you a journal entry, I want you to analyze for a few things. I need the mood,
   //   a summary, the subject of the entry, and a color representing the mood. You need to respond back with formatted
   //   JSON like this: {"mood": "", "subject": "", "color": "", "negative": ""}.

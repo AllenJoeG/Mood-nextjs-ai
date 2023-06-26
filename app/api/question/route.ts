@@ -5,7 +5,7 @@ import { prisma } from "@/utils/db"
 
 
 export const POST = async (request) => {
-  const {question} = await request.json()
+  const { question } = await request.json()
   const user = await getUserByClerkID()
 
   const entries = await prisma.journalEntry.findMany({
