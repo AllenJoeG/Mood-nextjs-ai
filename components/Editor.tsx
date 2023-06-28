@@ -15,13 +15,14 @@ const Editor = ({ entry }) => {
     await deleteEntry(entry.id)
     router.push('/journal')
   }
+
   useAutosave({
     data: text,
     onSave: async (_text) => {
       if (_text === entry.content) return
       setIsSaving(true)
 
-      const { data } = await updateEntry(entry.id, { content: _text })
+      const { data } = await updateEntry(entry.entryId, { content: _text })
 
       setEntry(data)
       setIsSaving(false)
