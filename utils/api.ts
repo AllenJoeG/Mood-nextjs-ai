@@ -13,25 +13,23 @@ export const deleteEntry = async (id) => {
   if (res.ok) {
     return res.json()
   } else {
-    throw new Error('Error handling deleteEntry() in utils/api.ts')
+    throw new Error(`Error ${res.status}: deleteEntry() in utils/api.ts`)
   }
 }
 
-export const updateEntry = async (id, content) => {
+export const updateEntry = async (id, updates) => {
   const res = await fetch(
     new Request(createURL(`/api/journal/${id}`), {
       method: 'PATCH',
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ updates }),
     })
   )
   if (res.ok) {
     return res.json()
   } else {
-    console.log(res);
-    throw new Error('Error handling updateEntry() in utils/api.ts')
+    throw new Error(`Error ${res.status}: updateEntry() in utils/api.ts`)
   }
 }
-
 
 export const createNewEntry = async () => {
   const res = await fetch(
@@ -45,7 +43,7 @@ export const createNewEntry = async () => {
     const data = await res.json()
     return data.data
   } else {
-    throw new Error('Error handling createNewEntry() in utils/api.ts')
+    throw new Error(`Error ${res.status}: createNewEntry() in utils/api.ts`)
   }
 }
 
@@ -60,6 +58,6 @@ export const askQuestion = async (question) => {
   if (res.ok) {
     return res.json()
   } else {
-    throw new Error('Error handling askQuestion() in utils/api.ts')
+    throw new Error(`Error ${res.status}: askQuestion() in utils/api.ts`)
   }
 }

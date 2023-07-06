@@ -22,7 +22,7 @@ const Editor = ({ entry }) => {
       if (_text === entry.content) return
       setIsSaving(true)
 
-      const { data } = await updateEntry(entry.entryId, { content: _text })
+      const { data } = await updateEntry(entry.id, { content: _text })
 
       setEntry(data)
       setIsSaving(false)

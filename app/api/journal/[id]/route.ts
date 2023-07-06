@@ -27,35 +27,33 @@ export const DELETE = async (request: Request, { params }) => {
 
 // PUT replaces the whole thing with the new state
 export const PATCH = async (request: Request, { params }) => {
-  const { content } = await request.json()
+  const { updates } = await request.json()
   const user = await getUserByClerkID()
 
-  const updatedEntry = await prisma.journalEntry.update({
+  const entry = await prisma.journalEntry.update({
     where: {
       userId_id: {
-        userId: user.id,
         id: params.id,
+        userId: user.id,
       },
     },
-    data: {
-      content,
-    },
+    data: updates,
   })
 
-  const analysis = await analyze(updatedEntry.content)
-  //upsert = update if found, if not, insert
-  const updated = await prisma.analysis.upsert({
+  const analysis = await analyze(entry)
+  const savedAnalysis = await prisma.analysis.upsert({
     where: {
-      entryId: updatedEntry.id,
+      entryId: entry.id,
     },
+    update: { ...analysis },
     create: {
+      entryId: entry.id,
       userId: user.id,
-      entryId: updatedEntry.id,
       ...analysis,
     },
-    update: analysis
-  
   })
 
-  return NextResponse.json({ data: {...updatedEntry, analysis: updated} })
+  update(['/journal'])
+
+  return NextResponse.json({ data: { ...entry, analysis: savedAnalysis } })
 }

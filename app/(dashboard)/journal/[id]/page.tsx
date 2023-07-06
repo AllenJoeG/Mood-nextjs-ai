@@ -17,6 +17,7 @@ const getEntry = async (id) => {
     },
   })
 
+  console.log(entry);
   return entry
 }
 
