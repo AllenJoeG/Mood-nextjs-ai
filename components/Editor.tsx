@@ -19,10 +19,10 @@ const Editor = ({ entry }) => {
   useAutosave({
     data: text,
     onSave: async (_text) => {
-      if (_text === entry.content) return
+      if (_text === currentEntry.content) return
       setIsSaving(true)
 
-      const { data } = await updateEntry(entry.id, { content: _text })
+      const { data } = await updateEntry(currentEntry.id, { content: _text })
 
       setEntry(data)
       setIsSaving(false)

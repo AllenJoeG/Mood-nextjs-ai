@@ -23,6 +23,7 @@ const getEntry = async (id) => {
 
 const EntryPage = async ({ params }) => {
   const entry = await getEntry(params.id)
+  console.log(entry);
 
   return (
     <div className="h-full w-full">
