@@ -25,6 +25,7 @@ export const updateEntry = async (id, updates) => {
     })
   )
   if (res.ok) {
+    console.log(`${res.status} Patch completed successfully`)
     return res.json()
   } else {
     throw new Error(`Error ${res.status}: updateEntry() in utils/api.ts`)

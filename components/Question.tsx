@@ -8,14 +8,10 @@ const Question = () => {
   const [loading, setLoading] = useState(false)
   const [response, setResponse] = useState()
 
-  const onChange = (e) => {
-    setValue(e.target.value)
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-
+    //fire off question to OpenAI
     const { answer } = await askQuestion(value)
     setResponse(answer)
     setLoading(false)
@@ -27,7 +23,7 @@ const Question = () => {
       <form onSubmit={handleSubmit}>
         <input 
           className='border border-black/20 px-4 py-2 text-lg rounded-lg' 
-          onChange={onChange} 
+          onChange={(e) => setValue(e.target.value)} 
           disabled={loading}
           value={value} 
           type="text" 
