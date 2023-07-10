@@ -6,8 +6,7 @@ import { prisma } from "@/utils/db"
 import { NextResponse } from "next/server"
 import { update } from '@/utils/actions'
 
-
-
+//Handles DELETE for journal entry by id
 export const DELETE = async (request: Request, { params }) => {
   const user = await getUserByClerkID()
 

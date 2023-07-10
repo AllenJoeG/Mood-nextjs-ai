@@ -17,13 +17,13 @@ const getEntry = async (id) => {
     },
   })
 
-  console.log(entry);
+  // console.log(entry);
   return entry
 }
 
 const EntryPage = async ({ params }) => {
   const entry = await getEntry(params.id)
-  console.log(entry);
+  // console.log(entry);
 
   return (
     <div className="h-full w-full">

@@ -35,10 +35,10 @@ const getPrompt = async (content) => {
   return input
 }
 
-export const analyze = async (content) => {
+export const analyze = async (entry) => {
   //model instance: temperature is a degree of responsiveness range 0 to 1. higher more creative associative, lower more rational logical coherent.
   const model = new OpenAI({ temperature: 0, modelName: 'gpt-3.5-turbo' })
-  const input = await getPrompt(content)
+  const input = await getPrompt(entry.content)
   const output = await model.call(input)
 
   try {
