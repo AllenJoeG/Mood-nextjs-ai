@@ -56,12 +56,13 @@ export const analyze = async (content) => {
 
 //Handles question input, submission to openAI, vector mapping, inmemory storage of vectors, similarity search, and return
 export const qa = async (question, entries) => {
-  const docs = entries.map((entry) => {
-    return new Document({
-      pageContent: entry.content,
-      metadata: { source: entry.id, date: entry.createdAt },
-    })
-  })
+  const docs = entries.map(
+    (entry) =>
+      new Document({
+        pageContent: entry.content,
+        metadata: { source: entry.id, date: entry.createdAt },
+      })
+  )
 
   //Hang onto the this chain of methods for future reference it's super powerful langchain implementations
   const model = new OpenAI({ temperature: 0, modelName: 'gpt-3.5-turbo' })

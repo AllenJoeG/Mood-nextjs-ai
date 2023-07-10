@@ -34,7 +34,7 @@ const JournalPage = async () => {
         <Question />
       </div>
 
-      <div className='pl-4 pr-4 grid grid-cols-4 gap-4 bg-orange-100'>
+      <div className='pl-4 pr-4 grid grid-cols-4 gap-4 bg-gray-100'>
         <NewEntryCard />
         {entries.map((entry) => (
           <div key={entry.id}>

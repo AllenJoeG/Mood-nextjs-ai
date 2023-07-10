@@ -13,13 +13,15 @@ export const POST = async (request) => {
       userId: user.id,
     },
     select: {
-      id: true,
+      // id: true,
       content: true,
       createdAt: true,
     },
   })
 
   const answer = await qa(question, entries)
+
+  console.log(answer);
 
   return NextResponse.json({ data:answer})
 }
