@@ -18,13 +18,14 @@ export const DELETE = async (request: Request, { params }) => {
       },
     },
   })
-
+  
   update(['/journal'])
 
   return NextResponse.json({ data: { id: params.id } })
 }
 
 // PUT replaces the whole thing with the new state
+// PATCH updates only the changed fields.
 export const PATCH = async (request: Request, { params }) => {
   const { updates } = await request.json()
   const user = await getUserByClerkID()
