@@ -4,21 +4,7 @@ Inspired and built forward from Scott Moss' course 'Next.js + AI' on Front End M
 
 ## Stack
 
-<a href="https://nextjs.org/docs"><img src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png" height="40px" width="40px" /></a>
-
-<a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a>
-
-<a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a>
-
-<a href="https://tailwindcss.com/"><img src="https://icons.iconarchive.com/icons/pictogrammers/material/256/tailwind-icon.png" height="40px" width="40px" /></a>
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a>
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a>
-
-<a href="https://planetscale.com/docs"><img src="https://seeklogo.com/images/P/planetscale-logo-0EEA8CAEB4-seeklogo.com.png" height="40px" width="40px" /></a>
-
-<a href="https://www.prisma.io/docs"><img src="https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png" height="40px" width="40px" /></a>
+<a href="https://nextjs.org/docs"><img src="https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://tailwindcss.com/"><img src="https://icons.iconarchive.com/icons/pictogrammers/material/256/tailwind-icon.png" height="40px" width="40px" /></a><a href="https://planetscale.com/docs"><img src="https://seeklogo.com/images/P/planetscale-logo-0EEA8CAEB4-seeklogo.com.png" height="40px" width="40px" /></a><a href="https://www.prisma.io/docs"><img src="https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png" height="40px" width="40px" /></a><a href="https://clerk.com/docs"><img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_c58d5fd4ba449e621bdcd01ac1f00976/clerk-dev.png" height="40px" width="40px" /></a>
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
