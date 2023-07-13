@@ -1,16 +1,13 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { auth } from '@clerk/nextjs'
 
-//check for user
-
 //Server component, not client, so it can be async!!
 export default async function Home() {
-
+  
+  //check for user
   const {userId} = await auth()
-
+  // contextual routing depending on auth() result
   let href = userId ? '/journal' : '/new-user'
-
 
   return (
     <div className="w-screen h-screen bg-black flex justify-center items-center text-white">
